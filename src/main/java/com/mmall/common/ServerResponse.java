@@ -42,7 +42,7 @@ public class ServerResponse<T> implements Serializable {
      */
     @JsonIgnore
     public boolean isSuccess() {
-        return this.status == ResponseCode.SECCESS.getCode();
+        return this.status == ResponseCode.SUCCESS.getCode();
     }
 
     public int getStatus() {
@@ -58,19 +58,19 @@ public class ServerResponse<T> implements Serializable {
     }
 
     public static <T> ServerResponse<T> createBySuccess() {
-        return new ServerResponse<>(ResponseCode.SECCESS.getCode());
+        return new ServerResponse<>(ResponseCode.SUCCESS.getCode());
     }
 
     public static <T> ServerResponse<T> createBySuccessMessage(String msg) {
-        return new ServerResponse<>(ResponseCode.SECCESS.getCode(), msg);
+        return new ServerResponse<>(ResponseCode.SUCCESS.getCode(), msg);
     }
 
     public static <T> ServerResponse<T> createBySuccess(T data) {
-        return new ServerResponse<>(ResponseCode.SECCESS.getCode(), data);
+        return new ServerResponse<>(ResponseCode.SUCCESS.getCode(), data);
     }
 
     public static <T> ServerResponse<T> createBySuccess(String msg, T data) {
-        return new ServerResponse<>(ResponseCode.SECCESS.getCode(), msg, data);
+        return new ServerResponse<>(ResponseCode.SUCCESS.getCode(), msg, data);
     }
 
     public static <T> ServerResponse<T> createByError() {
