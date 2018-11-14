@@ -61,10 +61,12 @@ public class FTPUtil {
                 logger.error("上传文件异常", e);
                 uploaded = false;
                 e.printStackTrace();
-            }finally {
+            } finally {
                 fis.close();
                 ftpClient.disconnect();
             }
+        } else {
+            uploaded = false;
         }
         return uploaded;
     }
