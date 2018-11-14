@@ -75,8 +75,25 @@ public class OrderController {
             e.printStackTrace();
         }
 
-        // todo 验证各种数据
+        // 验证各种数据
+        ServerResponse serverResponse = iOrderService.aliCallback(params);
+        if (serverResponse.isSuccess()) {
+            return Const.AlipayCallback.RESPONSE_SUCCESS;
+        }
+        return Const.AlipayCallback.RESPONSE_FAILED;
+    }
 
-
+    @RequestMapping("query_order_pay_status.do")
+    @ResponseBody
+    public ServerResponse<Boolean> queryOrderPayStatus(HttpSession session, Long orderNo) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
+        }
+        ServerResponse serverResponse = iOrderService.queryOrderPayStatus(user.getId(), orderNo);
+        if (serverResponse.isSuccess()) {
+            return ServerResponse.createBySuccess(true);
+        }
+        return ServerResponse.createBySuccess(false);
     }
 }
