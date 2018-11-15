@@ -2,9 +2,8 @@
 =======
 
 
-REST API接口文档见Wiki
+REST API接口文档见[Wiki](https://github.com/zjxjwxk/MMall/wiki)
 
-https://github.com/zjxjwxk/MMall/wiki
 
 ## 主要技术
 
