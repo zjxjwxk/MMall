@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=utf-8" %>
 <html>
 <body>
-<h2>Welcome Mall!</h2>
+<h2>Welcome to Zjxjwxk's Mall!</h2>
 
 登陆
 <form action="/user/login.do" method="post">
