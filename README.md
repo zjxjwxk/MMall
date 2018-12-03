@@ -4,6 +4,7 @@
 
 REST API接口文档见[Wiki](https://github.com/zjxjwxk/MMall/wiki)
 
+线上地址：https://mall.zjxjwxk.com
 
 ## 主要技术
 
